@@ -11,6 +11,9 @@
     padding: 5px;
 }
 
+.content {
+    padding-bottom: 100px;
+}
 .navigation {
     float:right;
 }
@@ -33,19 +36,15 @@
     vertical-align: middle;
     padding-left: 30px;
 }
-
+ 
 li {
-    display: inline-block;
-    padding: none;
-    height: 30px;
-    width: fit-content;
+    font-family: 'Poppins', sans-serif;
     text-align: left;
-    vertical-align: middle;
+    padding-left: 40px;
 }
 
 h1 {
-    font-size: 60pt;
-    font-weight: semibold;
+    font-size: 70pt;
     font-family: 'Poppins', sans-serif;
     text-align: right;
     padding: 50px 50px 0px;
@@ -53,8 +52,18 @@ h1 {
     width: 100%;
     float: right;
 }
+
+h2 {
+    font-size: 30pt;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    margin: 0px;
+    width: 100%;
+    text-align: left;
+}
+
 h3 {
-    font-size: 20px;
+    font-size: 14pt;
     font-weight: medium;
     font-family: 'Poppins', sans-serif;
     text-align: right;
@@ -70,28 +79,97 @@ p {
     padding-left: 150px;
 }
 
-footer {
-    display: inline-block;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    padding: 5px;
+/* My UX Skills Section */
+.flexContainer {
+    display: flex;
+    padding: 70px 70px 70px 100px;
+    margin: 50px 0px 50px 0px;
+    background-color: black;
+    color: white;
 }
 
-.footerNav {
-    float: right;
+.flexContainer div {
+    width: 55%;
+    padding: 20px;
 }
 
-.footerNav a{
-    height: 100%;
+
+/* My Work Section */
+
+.heading {
     float: left;
-    padding: 15px 30px;
 }
+.myWork {
+    padding: 50px 30px;
+    padding-top: 0;
+  }
 
-.footerNav a li{
-    display: table-cell;
-    vertical-align: middle;
-    height: 100%;
-    font-family: 'Poppins', sans-serif;
+  .workGrid {
+    display: grid;
+
+    background-color: #bdf6ef;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 350px 350px 350px;
+    grid-template-areas:
+    "img1 content1"
+    "img2 content2"
+    "img3 content3";
+  }
+
+  .workGrid img {
+    width: 100%;
+    max-width: 250px;
+    margin: 0 auto;
+    display: block;
+  }
+
+  .img1 {
+    grid-area: img1;
+  }
+  .img2 {
+    grid-area: img2;
+  }
+  .img3 {
+    grid-area: img3;
+  }
+  .img1, .img2, .img3, .content1, .content2, .content3 {
+    padding: 80px;
+  }
+  .content1 {
+    grid-area: content1;
+  }
+  .content2 {
+    grid-area: content2;
+  }
+  .content3 {
+    grid-area: content3;
+  }
+  
+/* Footer Section */
+footer {
+    background-color: white;
+    padding: 50px;
+    color:black;
+  }
+  footer ul {
+    list-style: none;
+    padding-left: 5px;
+  }
+  footer li {
+    display: inline-block;
+    padding: 0px 7px;
+  }
+
+@media only screen and (max-width: 600) {
+    .flexContainer {
+        flex-direction: column;
+        width: 100%;
+    }
+    .workGrid {
+        grid-template-rows: 300px 300px 300px 300px 300px;
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "img1 content1"
+        "img2 content2"
+        "img3 content3";
 }
